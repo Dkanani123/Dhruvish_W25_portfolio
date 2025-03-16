@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        /* Reset default margin/padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e40af);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header with Glassmorphism Effect */
+        header {
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            position: relative;
+        }
+
+        /* Underline effect on hover */
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ffcc00;
+            left: 0;
+            bottom: -4px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main Content */
+        main {
+            padding: 120px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Sections with smooth shadow & Glass effect */
+        section {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+            backdrop-filter: blur(8px);
+            border-left: 6px solid #00d4ff;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover Effect on Sections */
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Section Titles with Icons */
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffcc00;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "📌"; /* Default icon */
+            margin-right: 10px;
+        }
+
+        /* Custom Icons for Sections */
+        #bio h2::before { content: "🙋‍♂️"; }
+        #credentials h2::before { content: "🎓"; }
+        #skills h2::before { content: "💡"; }
+        #experience h2::before { content: "💼"; }
+
+        /* Section Text */
+        p, ul {
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                max-width: 100%;
+                padding: 100px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Work Samples</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="bio">
+            <h2>Bio</h2>
+            <p>Hi, I'm Dhruvish Kanani, a passionate software developer specializing in both front-end and back-end development. 
+               With a strong foundation in web and mobile app development, I love solving complex problems and building efficient, 
+               user-friendly applications.</p>
+        </section>
+
+        <section id="credentials">
+            <h2>Academic Credentials</h2>
+            <ul>
+                <li><strong>Degree:</strong> Advanced Diploma in Computer Programming & Analysis</li>
+                <li><strong>Institution:</strong> George Brown College, Toronto</li>
+                <li><strong>Certifications:</strong>
+                    <ul>
+                        <li>Full-Stack Web Development - Node.js & React.js</li>
+                        <li>Machine Learning with Python</li>
+                        <li>Cloud Computing with AWS & Google Cloud</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Front-end: HTML, CSS, JavaScript (React, Vue, Angular)</li>
+                <li>Back-end: Node.js, Express, Django, Flask</li>
+                <li>Database: MongoDB, PostgreSQL, Firebase</li>
+                <li>DevOps: Docker, Kubernetes, CI/CD</li>
+                <li>Cloud: AWS, Google Cloud, Heroku</li>
+                <li>Mobile Development: React Native, Swift (iOS), Kotlin (Android)</li>
+                <li>Other: Git, WebSockets, GraphQL, REST APIs</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <ul>
+                <li><strong>Software Developer Intern</strong> - TechCompany Inc. (May 2024 - Aug 2024)
+                    <ul>
+                        <li>Developed and maintained React.js and Node.js applications</li>
+                        <li>Implemented RESTful APIs and integrated MongoDB for data storage</li>
+                        <li>Optimized website performance, improving load times by 30%</li>
+                    </ul>
+                </li>
+                <li><strong>Freelance Developer</strong> (2023 - Present)
+                    <ul>
+                        <li>Designed and built custom web applications for various clients</li>
+                        <li>Integrated Stripe and PayPal payment gateways for e-commerce platforms</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
